@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "debug": "ndb server.js",
-    "start": "nodemon —exec babel-node server.js --es-module-specifier-resolution=node"
+    "start": "server.js"
   },
   "author": "Vijay",
   "license": "ISC",
