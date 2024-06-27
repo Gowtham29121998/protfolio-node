@@ -35,8 +35,14 @@ app.use(
 app.use(mongoSanitize());
 
 import mailRoutes from "./routes/mail.js";
+import userRoutes from "./routes/userRoutes.js"
+import bookingRoutes from './routes/bookingRoutes.js'
+import AppError from "./utils/appError.js";
 
 app.use("/api", mailRoutes);
+app.use('/api/user',userRoutes)
+app.use('/api/booking',bookingRoutes)
+
 // Data sanitization against XSS(clean user input from malicious HTML code)
 app.use(xss());
 

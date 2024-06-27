@@ -6,7 +6,17 @@ import { config } from "dotenv";
 config({
   path: "./.env",
 });
+const database = process.env.DATABASE
 
+// Connect the database
+connect(database, {
+  useCreateIndex: true,
+  useFindAndModify: false,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then((con) => {
+  console.log("DB connection Successfully!");
+});
 process.on("uncaughtException", (err) => {
   console.log("UNCAUGHT EXCEPTION!!! shutting down...");
   console.log(err.name, err.message);
